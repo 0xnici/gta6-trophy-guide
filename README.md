@@ -1,8 +1,8 @@
 # GTA 6 Trophy Guide
 
-[![Competition](https://make.fun/badge/gta6-trophy-guide-01.svg?utm_campaign=gta6-trophy-guide-01)](https://make.fun/bounty/gta6-trophy-guide-01?utm_campaign=gta6-trophy-guide-01)
-[![Rank](https://make.fun/badge/0xnici/gta6-trophy-guide/rank.svg?utm_campaign=gta6-trophy-guide-01)](https://make.fun/bounty/gta6-trophy-guide-01?utm_campaign=gta6-trophy-guide-01)
-[![Reward](https://make.fun/badge/0xnici/gta6-trophy-guide/reward.svg?utm_campaign=gta6-trophy-guide-01)](https://make.fun/bounty/gta6-trophy-guide-01?utm_campaign=gta6-trophy-guide-01)
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/0xnici/gta6-trophy-guide/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/0xnici/gta6-trophy-guide/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
 An offline trophy guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI. Every trophy carries its official name, description and grade exactly as PlayStation publishes them (via the Exophase PSN list), a missable flag and a story/spoiler flag derived from the official description, and a guide written for this entry in its own words that cites its sources right beside the text — Exophase for the official list, PSNProfiles for grades and tracked counts. Where a description is deliberately cryptic, the guide says plainly that its reading is a reading and invents no location or step.
 
