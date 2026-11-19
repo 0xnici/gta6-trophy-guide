@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA 6 Trophy Guide — all 55 trophies, tracked offline</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1>GTA 6 Trophy Guide</h1>
+    <p class="tagline">All 55 official PlayStation 5 trophies for Grand Theft Auto VI — a roadmap to the platinum, a cited guide for every trophy, and a checklist that lives in your browser. No account, no network, nothing leaves this page.</p>
+  </div>
+  <div class="progress-box" aria-label="Overall progress">
+    <div class="progress-line"><span id="progress-count">0 / 55 earned</span><span id="progress-pct">0%</span></div>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div class="grade-counts" id="grade-counts"></div>
+  </div>
+  <div class="tab-row">
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button type="button" class="tab active" data-view="checklist" role="tab">Checklist</button>
+      <button type="button" class="tab" data-view="roadmap" role="tab">Roadmap to Platinum</button>
+      <button type="button" class="tab" data-view="stats" role="tab">Stats &amp; Sources</button>
+    </nav>
+    <label class="switch spoiler-switch" title="Hide story trophies everywhere, including open details">
+      <input type="checkbox" id="spoiler-toggle">
+      <span>Spoiler mode — hide story trophies</span>
+    </label>
+  </div>
+</header>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="controls">
+      <input type="search" id="filter-q" placeholder="Search name, description or guide…" aria-label="Search trophies">
+      <select id="filter-category" aria-label="Filter by category">
+        <option value="all">All categories</option>
+        <option value="story">Story</option>
+        <option value="collectible">Collectible</option>
+        <option value="combat">Combat</option>
+        <option value="online">Partner / co-op</option>
+        <option value="misc">Misc</option>
+      </select>
+      <select id="filter-status" aria-label="Filter by status">
+        <option value="all">All — earned and to do</option>
+        <option value="done">Earned</option>
+        <option value="todo">Still to do</option>
+      </select>
+      <select id="filter-sort" aria-label="Sort the checklist">
+        <option value="grade">Sort: by grade</option>
+        <option value="roadmap">Sort: roadmap order</option>
+        <option value="difficulty">Sort: easiest first</option>
+        <option value="difficulty-desc">Sort: hardest first</option>
+        <option value="time">Sort: quickest first</option>
+      </select>
+      <label class="switch" title="Show only trophies that can be missed">
+        <input type="checkbox" id="filter-missable">
+        <span>Missable only</span>
+      </label>
+    </div>
+    <div class="io-bar">
+      <button type="button" id="io-export">Export checklist (JSON)</button>
+      <label class="io-import">Import checklist (JSON)<input type="file" id="io-import-file" accept="application/json,.json" hidden></label>
+      <button type="button" id="io-reset">Reset progress…</button>
+      <span id="io-status" role="status"></span>
+    </div>
+    <div id="card-list" class="card-list"></div>
+    <p id="empty-note" class="empty" hidden>No trophies match the current filters. Loosen the search or clear a filter to see more.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <div class="roadmap-hero">
+      <h2>Roadmap to Platinum</h2>
+      <p id="roadmap-summary"></p>
+      <div class="audio-box">
+        <button type="button" id="audio-toggle">▶&nbsp; Play the roadmap intro</button>
+        <audio id="roadmap-audio" src="assets/roadmap-intro.mp3" preload="none"></audio>
+        <span class="audio-note">A short narrated tour of the route below. It plays from a file inside this app — nothing is streamed or fetched.</span>
+      </div>
+      <div class="roadmap-controls">
+        <div class="chips" id="roadmap-grade-chips" aria-label="Filter the roadmap by grade">
+          <button type="button" class="chip active" data-grade="all">All grades</button>
+          <button type="button" class="chip" data-grade="platinum">Platinum</button>
+          <button type="button" class="chip" data-grade="gold">Gold</button>
+          <button type="button" class="chip" data-grade="silver">Silver</button>
+          <button type="button" class="chip" data-grade="bronze">Bronze</button>
+        </div>
+        <select id="roadmap-sort" aria-label="Sort the roadmap">
+          <option value="roadmap">Roadmap order</option>
+          <option value="difficulty">Easiest first</option>
+          <option value="difficulty-desc">Hardest first</option>
+        </select>
+      </div>
+    </div>
+    <ol id="roadmap-list" class="roadmap-list"></ol>
+  </section>
+
+  <section id="view-stats" class="view" hidden>
+    <h2>Progress by grade</h2>
+    <div id="grade-progress"></div>
+    <h2>Difficulty heat map</h2>
+    <p class="hint">Every trophy as a cell, in trophy-list order, coloured by this guide's difficulty rating — 1 is a story gift, 5 is the long grind. Earned trophies are dimmed and ticked.</p>
+    <div id="heat-map" class="heat-map"></div>
+    <div class="heat-legend">
+      <span><i class="sw d1"></i>1</span><span><i class="sw d2"></i>2</span><span><i class="sw d3"></i>3</span><span><i class="sw d4"></i>4</span><span><i class="sw d5"></i>5</span>
+      <span class="legend-earned"><i class="sw earned"></i>earned</span>
+    </div>
+    <h2>Totals</h2>
+    <div id="totals" class="totals"></div>
+    <h2>Source outline</h2>
+    <p class="hint">Generated from the live dataset when the page loads, so what is written here always matches the trophies above.</p>
+    <div id="outline" class="outline"></div>
+  </section>
+</main>
+
+<footer>
+  <div id="validation-badge" class="validation-badge">Checking the trophy data…</div>
+  <p class="foot-note">Trophy names, descriptions and grades are the official PlayStation 5 list for Grand Theft Auto VI. Guides, difficulty ratings, time estimates and the roadmap are this app's own work; any specific count or location claim carries its source on the trophy's card. Progress is stored only in this browser (localStorage) and can be exported or imported as JSON at any time.</p>
+</footer>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
